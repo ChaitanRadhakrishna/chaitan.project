@@ -1,0 +1,22 @@
+---
+- name: Update apt package cache
+  apt:
+    update_cache: yes
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - zlib1g-dev
+    - uuid-dev
+    - libmnl-dev
+    - gcc
+    - make
+    - git
+    - autoconf
+    - autogen
+    - automake
+    - pkg-config
+    - curl
+    - python
